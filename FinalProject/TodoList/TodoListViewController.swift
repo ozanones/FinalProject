@@ -33,6 +33,7 @@ class TodoListViewController: UIViewController, TodoListItemsProtocol {
         }
     }
     @IBAction func addButtonTapped(_ sender: Any) {
+        presenter.addButtonTapped()
     }
     
 }
