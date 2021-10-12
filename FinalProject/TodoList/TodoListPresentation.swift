@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct TodoListPresentation {
+    let title: String
+    
+    init(title: String) {
+        self.title = title
+    }
+}

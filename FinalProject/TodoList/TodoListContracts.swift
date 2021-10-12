@@ -9,4 +9,20 @@ import Foundation
 
 protocol TodoListPresenterProtocol {
     func viewDidLoad()
+    func didSelectRow(at indexPath: IndexPath)
+}
+
+protocol TodoListItemsProtocol {
+    func showTodoItems(_ output: TodoListPresenterOutput )
+}
+
+
+
+
+
+
+
+
+enum TodoListPresenterOutput {
+    case showTodoListItems([TodoListPresentation])
 }
