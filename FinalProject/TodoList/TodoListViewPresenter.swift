@@ -26,6 +26,10 @@ class TodoListViewPresenter: NSObject, TodoListPresenterProtocol {
     func didSelectRow(at indexPath: IndexPath) {
         interactor.didSelectRow(at: indexPath)
     }
+    
+    func addButtonTapped() {
+        router.presentPopUpView()
+    }
 }
 
 extension TodoListViewPresenter: TodoListInteractorDelegate {

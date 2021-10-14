@@ -11,5 +11,5 @@ struct TodoListItem {
     let id: Int
     let title: String
     let detail: String
-    let completionTime: Date
+    let completionTime: String
 }

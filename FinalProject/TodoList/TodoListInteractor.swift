@@ -18,10 +18,16 @@ class TodoListInteractor: NSObject, TodoListInteractorProtocol {
     }
     
     func viewDidLoad() {
-        //TODO
+        fetchFromCoreData()
+    }
+    
+    func fetchFromCoreData() {
+        
     }
     
     func didSelectRow(at indexPath: IndexPath) {
         //TODO
     }
+    
+    
 }

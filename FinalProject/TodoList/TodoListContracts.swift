@@ -22,6 +22,7 @@ protocol TodoListInteractorProtocol: NSObject {
     var delegate: TodoListInteractorDelegate? { get set }
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
+    
 }
 
 enum TodoListInteractorOutput {
@@ -34,6 +35,7 @@ enum TodoListInteractorOutput {
 protocol TodoListPresenterProtocol: NSObject {
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
+    func addButtonTapped()
 }
 
 enum TodoListPresenterOutput {
@@ -44,6 +46,7 @@ enum TodoListPresenterOutput {
 //MARK: Router
 protocol TodoListRouterProtocol: NSObject {
     func navigate(to route: TodoListRoute)
+    func presentPopUpView()
 }
 
 enum TodoListRoute {
