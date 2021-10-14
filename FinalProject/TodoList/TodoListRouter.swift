@@ -7,9 +7,14 @@
 
 import UIKit
 
-class TodoListRouter: NSObject {
+class TodoListRouter: NSObject, TodoListRouterProtocol {
+    
     private unowned let view: UIViewController
     init(view: UIViewController) {
         self.view = view
+    }
+    
+    func navigate(to route: TodoListRoute) {
+        //TODO
     }
 }

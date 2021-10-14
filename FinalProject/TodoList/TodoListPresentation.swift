@@ -13,4 +13,8 @@ struct TodoListPresentation {
     init(title: String) {
         self.title = title
     }
+    
+    init(todos: TodoListItem) {
+        self.init(title: todos.title)
+    }
 }
