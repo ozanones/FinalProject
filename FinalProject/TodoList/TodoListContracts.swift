@@ -12,12 +12,8 @@ protocol TodoListViewProtocol: NSObject {
     func handleOutput(_ output: TodoListPresenterOutput)
 }
 
-enum TodoListPresenterOutput {
-    case showTodoListItems([TodoListPresentation])
-}
 
 //MARK: Interactor
-
 protocol TodoListInteractorDelegate: NSObject {
     func handleOutput(_output: TodoListInteractorOutput)
 }
@@ -39,6 +35,11 @@ protocol TodoListPresenterProtocol: NSObject {
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
 }
+
+enum TodoListPresenterOutput {
+    case showTodoListItems([TodoListPresentation])
+}
+
 
 //MARK: Router
 protocol TodoListRouterProtocol: NSObject {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TodoListViewPresenter: NSObject {
+class TodoListViewPresenter: NSObject, TodoListPresenterProtocol {
     
     private unowned let view: TodoListViewProtocol
     private let router: TodoListRouterProtocol
@@ -17,5 +17,24 @@ class TodoListViewPresenter: NSObject {
         self.interactor = interactor
         self.view = view
         self.router = router
+    }
+    
+    func viewDidLoad() {
+        interactor.viewDidLoad()
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        interactor.didSelectRow(at: indexPath)
+    }
+}
+
+extension TodoListViewPresenter: TodoListInteractorDelegate {
+    func handleOutput(_output: TodoListInteractorOutput) {
+        switch _output {
+        case .showTodoList(let todos):
+            view.handleOutput(.showTodoListItems(todos.map(TodoListPresentation.init)))
+        case .showTodoListDetail(let todos):
+            router.navigate(to: .showTodoListDetail(todos))
+        }
     }
 }

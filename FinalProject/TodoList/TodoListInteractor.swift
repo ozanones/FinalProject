@@ -7,6 +7,21 @@
 
 import Foundation
 
-class TodoListInteractor: NSObject {
+class TodoListInteractor: NSObject, TodoListInteractorProtocol {
     
+    weak var delegate: TodoListInteractorDelegate?
+    private let service: CoreDataServiceProtocol
+    private var todoItems: [TodoItem] = []
+    
+    init(service: CoreDataServiceProtocol) {
+        self.service = service
+    }
+    
+    func viewDidLoad() {
+        //TODO
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        //TODO
+    }
 }

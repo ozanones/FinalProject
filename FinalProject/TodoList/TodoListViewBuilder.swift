@@ -9,12 +9,13 @@ import UIKit
 
 class TodoListBuilder {
     static func build() -> TodoListViewController {
-        let storyboard = UIStoryboard(name: "TodoList", bundle: nil)
+        let storyboard = UIStoryboard(name: "TodoListView", bundle: nil)
         let view = storyboard.instantiateViewController(identifier: "TodoListViewController") as! TodoListViewController
-        let interactor = TodoListInteractor.self
+        let interactor = TodoListInteractor(service: appContainer.service)
         let router = TodoListRouter(view: view)
-//        let presenter = TodoListPresenter
-//        view.presenter = presenter
+        let presenter = TodoListViewPresenter(interactor: interactor, view: view, router: router)
+        view.presenter = presenter
+        interactor.delegate = presenter
         return view
     }
 }
