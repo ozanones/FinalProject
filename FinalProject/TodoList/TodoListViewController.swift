@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TodoListViewController: UIViewController, TodoListItemsProtocol {
+class TodoListViewController: UIViewController, TodoListViewProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -22,7 +22,7 @@ class TodoListViewController: UIViewController, TodoListItemsProtocol {
         presenter.viewDidLoad()
     }
     
-    func showTodoItems(_ output: TodoListPresenterOutput) {
+    func handleOutput(_ output: TodoListPresenterOutput) {
         switch output {
         case .showTodoListItems(let todoListItems):
             self.todoListItems = todoListItems
@@ -32,6 +32,7 @@ class TodoListViewController: UIViewController, TodoListItemsProtocol {
             }
         }
     }
+    
     @IBAction func addButtonTapped(_ sender: Any) {
     }
     
