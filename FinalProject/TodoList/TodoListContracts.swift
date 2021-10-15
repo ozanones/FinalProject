@@ -39,6 +39,7 @@ protocol TodoListPresenterProtocol: NSObject {
     func addButtonTapped()
 }
 
+
 enum TodoListPresenterOutput {
     case showTodoListItems([TodoListPresentation])
 }
@@ -53,3 +54,4 @@ protocol TodoListRouterProtocol: NSObject {
 enum TodoListRoute {
     case showTodoListDetail(TodoItem)
 }
+
