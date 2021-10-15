@@ -22,11 +22,13 @@ protocol TodoListInteractorProtocol: NSObject {
     var delegate: TodoListInteractorDelegate? { get set }
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
+    func fetchFromCoreData()
+    
 }
 
 enum TodoListInteractorOutput {
-    case showTodoListDetail(TodoListItem)
-    case showTodoList([TodoListItem])
+    case showTodoListDetail(TodoItem)
+    case showTodoList([TodoItem])
 }
 
 
@@ -46,8 +48,10 @@ enum TodoListPresenterOutput {
 //MARK: Router
 protocol TodoListRouterProtocol: NSObject {
     func navigate(to route: TodoListRoute)
+    func getTodoAndSaveToCoreData()
 }
 
 enum TodoListRoute {
-    case showTodoListDetail(TodoListItem)
+    case showTodoListDetail(TodoItem)
 }
+

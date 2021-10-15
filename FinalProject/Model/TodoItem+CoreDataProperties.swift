@@ -18,7 +18,7 @@ extension TodoItem {
 
     @NSManaged public var id: Int16
     @NSManaged public var name: String?
-    @NSManaged public var completionTime: Date?
+    @NSManaged public var completionTime: String?
     @NSManaged public var detail: String?
 
 }

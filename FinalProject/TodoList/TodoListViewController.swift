@@ -25,7 +25,9 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
     func handleOutput(_ output: TodoListPresenterOutput) {
         switch output {
         case .showTodoListItems(let todoListItems):
+            
             self.todoListItems = todoListItems
+            
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
