@@ -22,7 +22,14 @@ class TodoListInteractor: NSObject, TodoListInteractorProtocol {
     }
     
     func fetchFromCoreData() {
-        
+        do {
+            self.todoItems = try CoreDataFunctionalService.context.fetch(TodoItem.fetchRequest())
+            
+                self.delegate?.handleOutput(_output: .showTodoList(self.todoItems))
+            
+        } catch  {
+            print("Error occured while fetching TodoItems from Core Data")
+        }
     }
     
     func didSelectRow(at indexPath: IndexPath) {

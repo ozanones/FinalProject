@@ -28,7 +28,7 @@ class TodoListViewPresenter: NSObject, TodoListPresenterProtocol {
     }
     
     func addButtonTapped() {
-        router.presentPopUpView()
+        router.getTodoAndSaveToCoreData()
     }
 }
 

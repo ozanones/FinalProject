@@ -10,7 +10,7 @@ import CoreData
 
 class CoreDataFunctionalService {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoItem")
     

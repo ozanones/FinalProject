@@ -14,7 +14,7 @@ struct TodoListPresentation {
         self.title = title
     }
     
-    init(todos: TodoListItem) {
-        self.init(title: todos.title)
+    init(todos: TodoItem) {
+        self.init(title: todos.name!)
     }
 }

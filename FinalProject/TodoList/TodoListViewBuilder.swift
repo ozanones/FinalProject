@@ -12,7 +12,7 @@ class TodoListBuilder {
         let storyboard = UIStoryboard(name: "TodoListView", bundle: nil)
         let view = storyboard.instantiateViewController(identifier: "TodoListViewController") as! TodoListViewController
         let interactor = TodoListInteractor(service: appContainer.service)
-        let router = TodoListRouter(view: view)
+        let router = TodoListRouter(view: view, interactor: interactor)
         let presenter = TodoListViewPresenter(interactor: interactor, view: view, router: router)
         view.presenter = presenter
         interactor.delegate = presenter
