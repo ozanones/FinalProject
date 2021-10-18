@@ -28,7 +28,6 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
             
             self.todoListItems = todoListItems
             
-            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -38,7 +37,6 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
     @IBAction func addButtonTapped(_ sender: Any) {
         presenter.addButtonTapped()
     }
-    
 }
 
 // MARK: UITableViewDelegate
@@ -60,6 +58,4 @@ extension TodoListViewController: UITableViewDataSource {
         return cell
         
     }
-    
-    
 }
