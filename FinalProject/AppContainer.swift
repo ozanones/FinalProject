@@ -11,5 +11,5 @@ let appContainer = AppContainer()
 
 class AppContainer {
     let router = AppRouter()
-    let service = CoreDataService()
+    let service = CoreDataFunctionalService()
 }

@@ -7,15 +7,16 @@
 
 import Foundation
 
-class CoreDataService: CoreDataServiceProtocol{
+//class CoreDataService: CoreDataServiceProtocol{
+class CoreDataService {
     
-    private let coreDataService = CoreDataFunctionalService.instance
+    //private let coreDataService = CoreDataFunctionalService.instance
     
-    func todoItems(completion: @escaping (TodoItem?, Error?) -> Void) {
-        coreDataService.fetchFromCoreData(completion)
-    }
+//    func todoItems(completion: @escaping (TodoItem?, Error?) -> Void) {
+//        coreDataService.fetchFromCoreData(completion)
+//    }
 }
 
-protocol CoreDataServiceProtocol {
-    func todoItems(completion: @escaping (TodoItem?, Error?) -> Void)
-}
+//protocol CoreDataServiceProtocol {
+//    func todoItems(completion: @escaping (TodoItem?, Error?) -> Void)
+//}
