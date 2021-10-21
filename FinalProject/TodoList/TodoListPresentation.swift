@@ -8,6 +8,7 @@
 import Foundation
 
 struct TodoListPresentation {
+    
     let title: String
     let completion: String
     let detail: String
@@ -21,18 +22,4 @@ struct TodoListPresentation {
     init(todos: TodoItem) {
         self.init(title: todos.name ?? "", completion: todos.completionTime ?? "", detail: todos.detail ?? "")
     }
-    
-    //    let title: String
-    //
-    //    init(title: String) {
-    //            self.title = title
-    //        }
-    //
-    //        init(todos: TodoItem) {
-    //            self.init(title: todos.name!)
-    //        }
-    
-    
-    
-    
 }

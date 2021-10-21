@@ -16,7 +16,10 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
     
     var todoListItems: [TodoListPresentation] = []
     
+    var filteredTodos: [TodoListPresentation] = []
+    
     override func viewDidLoad() {
+        searchBar.delegate = self
         super.viewDidLoad()
         presenter.viewDidLoad()
     }
@@ -25,11 +28,13 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
         switch output {
         case .showTodoListItems(let todoListItems):
             self.todoListItems = todoListItems
+            self.filteredTodos = todoListItems
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
+    var datePicker:UIDatePicker = UIDatePicker()
     
     @IBAction func addButtonTapped(_ sender: Any) {
         
@@ -38,18 +43,19 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
             taskName.placeholder = "Add Task Here..."
         }
         alert.addTextField { (completionTime) in
-            completionTime.placeholder = "Enter Your Completion Time..."
+            completionTime.placeholder = "Enter Your Completion Time in Hour..."
         }
         alert.addTextField { (detail) in
             detail.placeholder = "Details About Your Task..."
         }
-
+        
         let submitButton = UIAlertAction(title: "Add", style: .default) { (action) in
             let nameTaskField = alert.textFields?[0]
             let detailTaskField = alert.textFields?[1]
             let completionTimeField = alert.textFields?[2]
 
             let newTask = TodoListPresentation(title: nameTaskField?.text ?? "", completion: completionTimeField?.text ?? "", detail: detailTaskField?.text ?? "")
+            
             self.presenter.addTodo(newTask)
 
             self.presenter.viewDidLoad()
@@ -70,13 +76,28 @@ extension TodoListViewController: UITableViewDelegate {
 // MARK: UITableViewDataSource
 extension TodoListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoListItems.count
+        return filteredTodos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
-        cell.textLabel?.text = todoListItems[indexPath.row].title
+        cell.textLabel?.text = filteredTodos[indexPath.row].title
         return cell
         
     }
 }
+// MARK: UISearchBarDelegate
+extension TodoListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredTodos = todoListItems
+
+        if searchText.isEmpty {
+            filteredTodos = todoListItems
+                } else {
+                    filteredTodos = todoListItems.filter { $0.title.contains(searchText) }
+                }
+            tableView.reloadData()
+    }
+}
+
+
