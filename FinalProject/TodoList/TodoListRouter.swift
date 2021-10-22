@@ -17,6 +17,11 @@ class TodoListRouter: NSObject, TodoListRouterProtocol {
     }
     
     func navigate(to route: TodoListRoute) {
-        //TODO
+        switch route {
+        case .showTodoListDetail(let todos):
+            let viewController = TodoListDetailBuilder.build(todos)
+            self.view.navigationController?.pushViewController(viewController, animated: true)
+        }
+        
     }
 }

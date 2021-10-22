@@ -27,10 +27,6 @@ class TodoListViewPresenter: NSObject, TodoListPresenterProtocol {
         interactor.didSelectRow(at: indexPath)
     }
     
-    func addButtonTapped() {
-        //router.getTodoAndSaveToCoreData()
-    }
-    
     func addTodo(_ todo: TodoListPresentation){
         interactor.saveTodo(_todo: todo)
     }

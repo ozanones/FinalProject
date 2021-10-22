@@ -26,7 +26,8 @@ class TodoListInteractor: NSObject, TodoListInteractorProtocol {
     }
     
     func didSelectRow(at indexPath: IndexPath) {
-        //TODO
+        let todos = todoItems[indexPath.row]
+        self.delegate?.handleOutput(_output: .showTodoListDetail(todos))
     }
         
     func fetchFromCoreData() {
