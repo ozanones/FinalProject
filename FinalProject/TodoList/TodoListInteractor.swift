@@ -12,6 +12,7 @@ class TodoListInteractor: NSObject, TodoListInteractorProtocol {
     weak var delegate: TodoListInteractorDelegate?
     private let service: CoreDataFunctionalService
     private var todoItems: [TodoItem] = []
+    private var todoDetailItems: [TodoListDetailPresentation] = []
     
     init(service: CoreDataFunctionalService) {
         self.service = service

@@ -24,8 +24,8 @@
 		5F29867327122FA700E1CCA0 /* TodoListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29867227122FA700E1CCA0 /* TodoListContracts.swift */; };
 		5F2986762712389500E1CCA0 /* TodoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2986742712389500E1CCA0 /* TodoItem+CoreDataClass.swift */; };
 		5F2986772712389500E1CCA0 /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2986752712389500E1CCA0 /* TodoItem+CoreDataProperties.swift */; };
-		5F4B6132271E190C005A6EDC /* TodoListDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F4B6131271E190C005A6EDC /* TodoListDetailView.storyboard */; };
 		5F5DA69B2718BD310035E0CF /* CoreDataFunctionalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DA69A2718BD310035E0CF /* CoreDataFunctionalService.swift */; };
+		5F6477D7272354A800330EE0 /* TodoListDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F6477D6272354A800330EE0 /* TodoListDetailView.storyboard */; };
 		5FAA62562722D49000492EB3 /* TodoListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA62552722D49000492EB3 /* TodoListDetailViewController.swift */; };
 		5FAA62582722D55F00492EB3 /* TodoListDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA62572722D55F00492EB3 /* TodoListDetailBuilder.swift */; };
 		5FAA625A2722D72F00492EB3 /* TodoListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA62592722D72F00492EB3 /* TodoListDetailViewModel.swift */; };
@@ -53,8 +53,8 @@
 		5F29867227122FA700E1CCA0 /* TodoListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListContracts.swift; sourceTree = "<group>"; };
 		5F2986742712389500E1CCA0 /* TodoItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5F2986752712389500E1CCA0 /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5F4B6131271E190C005A6EDC /* TodoListDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoListDetailView.storyboard; sourceTree = "<group>"; };
 		5F5DA69A2718BD310035E0CF /* CoreDataFunctionalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunctionalService.swift; sourceTree = "<group>"; };
+		5F6477D6272354A800330EE0 /* TodoListDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoListDetailView.storyboard; sourceTree = "<group>"; };
 		5FAA62552722D49000492EB3 /* TodoListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListDetailViewController.swift; sourceTree = "<group>"; };
 		5FAA62572722D55F00492EB3 /* TodoListDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListDetailBuilder.swift; sourceTree = "<group>"; };
 		5FAA62592722D72F00492EB3 /* TodoListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListDetailViewModel.swift; sourceTree = "<group>"; };
@@ -135,12 +135,12 @@
 		5F4B6130271E1719005A6EDC /* TodoListDetails */ = {
 			isa = PBXGroup;
 			children = (
-				5F4B6131271E190C005A6EDC /* TodoListDetailView.storyboard */,
 				5FAA62552722D49000492EB3 /* TodoListDetailViewController.swift */,
 				5FAA62572722D55F00492EB3 /* TodoListDetailBuilder.swift */,
 				5FAA62592722D72F00492EB3 /* TodoListDetailViewModel.swift */,
 				5FAA625B2722D89A00492EB3 /* TodoListDetailPresentation.swift */,
 				5FAA625D2722D8CB00492EB3 /* TodoListDetailContracts.swift */,
+				5F6477D6272354A800330EE0 /* TodoListDetailView.storyboard */,
 			);
 			path = TodoListDetails;
 			sourceTree = "<group>";
@@ -210,7 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4B6132271E190C005A6EDC /* TodoListDetailView.storyboard in Resources */,
+				5F6477D7272354A800330EE0 /* TodoListDetailView.storyboard in Resources */,
 				5F298667271224C300E1CCA0 /* TodoListView.storyboard in Resources */,
 				5F29864F27121E0A00E1CCA0 /* LaunchScreen.storyboard in Resources */,
 				5F29864C27121E0A00E1CCA0 /* Assets.xcassets in Resources */,

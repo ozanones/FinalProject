@@ -7,16 +7,26 @@
 
 import Foundation
 
-class TodoListDetailViewModel {
+class TodoListDetailViewModel: TodoListDetailViewModelProtocol {
     
-    private var todos: TodoItem?
-
-        init() {
-            
-        }
+    var delegate: TodoListDetailViewModelDelegate?
+    var todos: TodoItem?
+    
+    init() {
+        
+    }
     init(todos: TodoItem) {
-            self.todos = todos
-        }
+        self.todos = todos
+    }
+    
+    func viewDidLoad() {
+        guard let todos = todos else { return }
+        self.delegate?.showTodoDetail(todos)
+    }
+    
+    func getTodo(todoDetailPresentation: TodoListDetailPresentation) {
+        //
+    }
 }
 
 

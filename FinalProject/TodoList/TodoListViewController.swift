@@ -51,10 +51,10 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
         
         let submitButton = UIAlertAction(title: "Add", style: .default) { (action) in
             let nameTaskField = alert.textFields?[0]
-            let detailTaskField = alert.textFields?[1]
-            let completionTimeField = alert.textFields?[2]
+            let completionTimeField = alert.textFields?[1]
+            let detailTaskField = alert.textFields?[2]
 
-            let newTask = TodoListPresentation(title: nameTaskField?.text ?? "", completion: completionTimeField?.text ?? "", detail: detailTaskField?.text ?? "")
+            let newTask = TodoListPresentation(name: nameTaskField?.text ?? "", completionTime: completionTimeField?.text ?? "", detail: detailTaskField?.text ?? "")
             
             self.presenter.addTodo(newTask)
 
@@ -81,7 +81,7 @@ extension TodoListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
-        cell.textLabel?.text = filteredTodos[indexPath.row].title
+        cell.textLabel?.text = filteredTodos[indexPath.row].name
         return cell
         
     }
@@ -94,7 +94,7 @@ extension TodoListViewController: UISearchBarDelegate {
         if searchText.isEmpty {
             filteredTodos = todoListItems
                 } else {
-                    filteredTodos = todoListItems.filter { $0.title.contains(searchText) }
+                    filteredTodos = todoListItems.filter { $0.name.contains(searchText) }
                 }
             tableView.reloadData()
     }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol TodoDetailViewModelDelegate: NSObject {
-    func showTodoDetail(_ todo: TodoListDetailPresentation)
+protocol TodoListDetailViewModelDelegate: NSObject {
+    func showTodoDetail(_ todo: TodoItem)
 }
 
-protocol TodoDetailViewModelProtocol {
-    var delegate: TodoDetailViewModelDelegate? { get set }
+protocol TodoListDetailViewModelProtocol {
+    var delegate: TodoListDetailViewModelDelegate? { get set }
     func viewDidLoad()
-    func saveTodo(todoDetailPresentation : TodoListDetailPresentation)
+    func getTodo(todoDetailPresentation : TodoListDetailPresentation)
 }

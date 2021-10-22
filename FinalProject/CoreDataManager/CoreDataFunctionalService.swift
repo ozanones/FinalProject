@@ -29,8 +29,8 @@ class CoreDataFunctionalService {
     func save(_todo: TodoListPresentation){
         do {
             let newTask = TodoItem(context: context)
-            newTask.name = _todo.title
-            newTask.completionTime = _todo.completion
+            newTask.name = _todo.name
+            newTask.completionTime = _todo.completionTime
             newTask.detail = _todo.detail
             try context.save()
         } catch  {

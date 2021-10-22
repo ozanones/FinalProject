@@ -9,17 +9,17 @@ import Foundation
 
 struct TodoListPresentation {
     
-    let title: String
-    let completion: String
+    let name: String
+    let completionTime: String
     let detail: String
     
-    init(title: String, completion: String, detail: String) {
-        self.title = title
-        self.completion = completion
+    init(name: String, completionTime: String, detail: String) {
+        self.name = name
+        self.completionTime = completionTime
         self.detail = detail
     }
     
     init(todos: TodoItem) {
-        self.init(title: todos.name ?? "", completion: todos.completionTime ?? "", detail: todos.detail ?? "")
+        self.init(name: todos.name ?? "", completionTime: todos.completionTime ?? "", detail: todos.detail ?? "")
     }
 }
