@@ -23,6 +23,7 @@ protocol TodoListInteractorProtocol: NSObject {
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
     func fetchFromCoreData()
+    func saveTodo(_todo: TodoListPresentation)
     
 }
 
@@ -36,7 +37,7 @@ enum TodoListInteractorOutput {
 protocol TodoListPresenterProtocol: NSObject {
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
-    func addButtonTapped()
+    func addTodo(_ todo: TodoListPresentation)
 }
 
 
@@ -48,7 +49,6 @@ enum TodoListPresenterOutput {
 //MARK: Router
 protocol TodoListRouterProtocol: NSObject {
     func navigate(to route: TodoListRoute)
-    func getTodoAndSaveToCoreData()
 }
 
 enum TodoListRoute {

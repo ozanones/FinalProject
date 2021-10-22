@@ -1,13 +1,13 @@
 //
-//  TodoListPresentation.swift
+//  TodoListDetailPresentation.swift
 //  FinalProject
 //
-//  Created by Ozan Deniz Ones on 9.10.2021.
+//  Created by Ozan Deniz Ones on 22.10.2021.
 //
 
 import Foundation
 
-struct TodoListPresentation {
+struct TodoListDetailPresentation {
     
     let name: String
     let completionTime: String
@@ -22,4 +22,8 @@ struct TodoListPresentation {
     init(todos: TodoItem) {
         self.init(name: todos.name ?? "", completionTime: todos.completionTime ?? "", detail: todos.detail ?? "")
     }
+    
+//    init(todos: TodoListPresentation) {
+//        self.init(title: todos.title, completion: todos.completion, detail: todos.detail)
+//    }
 }

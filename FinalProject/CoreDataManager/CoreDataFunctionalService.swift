@@ -10,18 +10,33 @@ import CoreData
 
 class CoreDataFunctionalService {
     
-    static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TodoItem")
-    
-    
-    static let instance = CoreDataFunctionalService()
-    
-    func fetchFromCoreData(_ completion: @escaping (TodoItem?, Error) -> Void){
-        // fetch from Core Data
+    func fetchFromCoreData() -> [TodoItem]{
+        
+        var todos: [TodoItem] = []
+        
+        let fetchRequest: NSFetchRequest<TodoItem> = TodoItem.fetchRequest()
+        do {
+            todos = try context.fetch(fetchRequest)
+            print(todos)
+        } catch {
+           print("Error occured during fetching data from Core Data")
+        }
+        return todos
     }
-    func addToCoreData(){
-        // add to Core Data
+    
+    func save(_todo: TodoListPresentation){
+        do {
+            let newTask = TodoItem(context: context)
+            newTask.name = _todo.name
+            newTask.completionTime = _todo.completionTime
+            newTask.detail = _todo.detail
+            try context.save()
+        } catch  {
+            print("Error occured during saving to Core Data")
+        }
+        
     }
 }
 
