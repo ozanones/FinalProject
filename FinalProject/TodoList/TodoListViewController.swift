@@ -13,9 +13,7 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var presenter: TodoListPresenterProtocol!
-    
     var todoListItems: [TodoListPresentation] = []
-    
     var filteredTodos: [TodoListPresentation] = []
     
     override func viewDidLoad() {
@@ -43,7 +41,8 @@ class TodoListViewController: UIViewController, TodoListViewProtocol {
             taskName.placeholder = "Add Task Here..."
         }
         alert.addTextField { (completionTime) in
-            completionTime.placeholder = "Enter Your Completion Time in Hour..."
+            completionTime.keyboardType = .numberPad
+            completionTime.placeholder = "Enter After How Many Hours Later to be Nofified..."
         }
         alert.addTextField { (detail) in
             detail.placeholder = "Details About Your Task..."
@@ -83,9 +82,19 @@ extension TodoListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
         cell.textLabel?.text = filteredTodos[indexPath.row].name
         return cell
-        
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completion in
+
+            let taskToRemove = self.filteredTodos[indexPath.row]
+
+            self.presenter.remove(taskToRemove)
+        }
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }
+
 // MARK: UISearchBarDelegate
 extension TodoListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -99,5 +108,3 @@ extension TodoListViewController: UISearchBarDelegate {
             tableView.reloadData()
     }
 }
-
-

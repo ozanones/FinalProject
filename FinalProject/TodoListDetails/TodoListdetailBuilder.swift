@@ -12,7 +12,7 @@ class TodoListDetailBuilder {
     static func build(_ todo: TodoItem) -> TodoListDetailViewController {
         let storyboard = UIStoryboard(name: "TodoListDetailView", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "TodoListDetailViewController") as! TodoListDetailViewController
-        viewController.viewModel = TodoListDetailViewModel(todos: todo)
+        viewController.viewModel = TodoListDetailViewModel(service: appContainer.notificationService, todos: todo)
         return viewController
     }
 }

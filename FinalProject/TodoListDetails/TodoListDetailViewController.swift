@@ -22,15 +22,19 @@ class TodoListDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
-
     }
+    
 }
 
 extension TodoListDetailViewController: TodoListDetailViewModelDelegate {
-
+    
     func showTodoDetail(_ todo: TodoItem) {
-        titleLabel.text = todo.name
-        descriptionLabel.text = todo.detail
-        completionLabel.text = todo.completionTime
+        guard let taskName = todo.name else { return }
+        titleLabel.text = "Todo Task: \(taskName)"
+        guard let description = todo.detail else { return }
+        descriptionLabel.text = "Detail about Task: \(description)"
+        guard let time = todo.completionTime else { return }
+        completionLabel.text = "Remind me in \(time) hours"
+        viewModel.createNotification(todo)
     }
 }

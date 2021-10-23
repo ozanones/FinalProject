@@ -26,6 +26,7 @@
 		5F2986772712389500E1CCA0 /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2986752712389500E1CCA0 /* TodoItem+CoreDataProperties.swift */; };
 		5F5DA69B2718BD310035E0CF /* CoreDataFunctionalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DA69A2718BD310035E0CF /* CoreDataFunctionalService.swift */; };
 		5F6477D7272354A800330EE0 /* TodoListDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F6477D6272354A800330EE0 /* TodoListDetailView.storyboard */; };
+		5F6C313F27243A3E00B2E488 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C313E27243A3E00B2E488 /* NotificationManager.swift */; };
 		5FAA62562722D49000492EB3 /* TodoListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA62552722D49000492EB3 /* TodoListDetailViewController.swift */; };
 		5FAA62582722D55F00492EB3 /* TodoListDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA62572722D55F00492EB3 /* TodoListDetailBuilder.swift */; };
 		5FAA625A2722D72F00492EB3 /* TodoListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA62592722D72F00492EB3 /* TodoListDetailViewModel.swift */; };
@@ -55,6 +56,7 @@
 		5F2986752712389500E1CCA0 /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5F5DA69A2718BD310035E0CF /* CoreDataFunctionalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunctionalService.swift; sourceTree = "<group>"; };
 		5F6477D6272354A800330EE0 /* TodoListDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoListDetailView.storyboard; sourceTree = "<group>"; };
+		5F6C313E27243A3E00B2E488 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5FAA62552722D49000492EB3 /* TodoListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListDetailViewController.swift; sourceTree = "<group>"; };
 		5FAA62572722D55F00492EB3 /* TodoListDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListDetailBuilder.swift; sourceTree = "<group>"; };
 		5FAA62592722D72F00492EB3 /* TodoListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListDetailViewModel.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		5F29863E27121E0700E1CCA0 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				5F6C314027243D8500B2E488 /* NotificationManagerService */,
 				5F4B6130271E1719005A6EDC /* TodoListDetails */,
 				5F5DA6972718B8120035E0CF /* CoreDataManager */,
 				5F298678271238B000E1CCA0 /* Model */,
@@ -151,6 +154,14 @@
 				5F5DA69A2718BD310035E0CF /* CoreDataFunctionalService.swift */,
 			);
 			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		5F6C314027243D8500B2E488 /* NotificationManagerService */ = {
+			isa = PBXGroup;
+			children = (
+				5F6C313E27243A3E00B2E488 /* NotificationManager.swift */,
+			);
+			path = NotificationManagerService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				5FAA625C2722D89A00492EB3 /* TodoListDetailPresentation.swift in Sources */,
 				5F29866F2712260100E1CCA0 /* TodoListViewBuilder.swift in Sources */,
 				5F29864227121E0700E1CCA0 /* SceneDelegate.swift in Sources */,
+				5F6C313F27243A3E00B2E488 /* NotificationManager.swift in Sources */,
 				5F29865C27121F9A00E1CCA0 /* TodoListPresentation.swift in Sources */,
 				5F29867127122B0000E1CCA0 /* TodoListViewPresenter.swift in Sources */,
 			);

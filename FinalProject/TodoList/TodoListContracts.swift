@@ -24,7 +24,7 @@ protocol TodoListInteractorProtocol: NSObject {
     func didSelectRow(at indexPath: IndexPath)
     func fetchFromCoreData()
     func saveTodo(_todo: TodoListPresentation)
-    
+    func remove(_ taskToRemove: TodoListPresentation)
 }
 
 enum TodoListInteractorOutput {
@@ -38,6 +38,7 @@ protocol TodoListPresenterProtocol: NSObject {
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
     func addTodo(_ todo: TodoListPresentation)
+    func remove(_ taskToRemove: TodoListPresentation)
 }
 
 
