@@ -8,14 +8,13 @@
 import Foundation
 
 class TodoListDetailViewModel: TodoListDetailViewModelProtocol {
-    
+
     var delegate: TodoListDetailViewModelDelegate?
     var todos: TodoItem?
+    var service: NotificationManager?
     
-    init() {
-        
-    }
-    init(todos: TodoItem) {
+    init(service: NotificationManager, todos: TodoItem) {
+        self.service = service
         self.todos = todos
     }
     
@@ -24,8 +23,8 @@ class TodoListDetailViewModel: TodoListDetailViewModelProtocol {
         self.delegate?.showTodoDetail(todos)
     }
     
-    func getTodo(todoDetailPresentation: TodoListDetailPresentation) {
-        //
+    func createNotification(_ todo: TodoItem) {
+        service?.createNotification(todo)
     }
 }
 

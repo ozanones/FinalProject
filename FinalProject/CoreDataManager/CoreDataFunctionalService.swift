@@ -36,6 +36,16 @@ class CoreDataFunctionalService {
         } catch  {
             print("Error occured during saving to Core Data")
         }
+    }
+    
+    func removeFromCoreData(taskToRemove: TodoListPresentation){
+        
+        do {
+            //context.delete(taskToRemove as NSManagedObject)
+            try context.save()
+        } catch {
+            print("Error occured during deleting From Core Data")
+        }
         
     }
 }

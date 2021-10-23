@@ -22,8 +22,4 @@ struct TodoListDetailPresentation {
     init(todos: TodoItem) {
         self.init(name: todos.name ?? "", completionTime: todos.completionTime ?? "", detail: todos.detail ?? "")
     }
-    
-//    init(todos: TodoListPresentation) {
-//        self.init(title: todos.title, completion: todos.completion, detail: todos.detail)
-//    }
 }

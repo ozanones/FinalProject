@@ -30,6 +30,10 @@ class TodoListViewPresenter: NSObject, TodoListPresenterProtocol {
     func addTodo(_ todo: TodoListPresentation){
         interactor.saveTodo(_todo: todo)
     }
+    
+    func remove(_ taskToRemove: TodoListPresentation) {
+        interactor.remove(taskToRemove)
+    }
 }
 
 extension TodoListViewPresenter: TodoListInteractorDelegate {

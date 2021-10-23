@@ -41,5 +41,7 @@ class TodoListInteractor: NSObject, TodoListInteractorProtocol {
         }
     }
     
-    
+    func remove(_ taskToRemove: TodoListPresentation) {
+        service.removeFromCoreData(taskToRemove: taskToRemove)
+    }
 }

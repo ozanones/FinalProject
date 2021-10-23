@@ -14,5 +14,5 @@ protocol TodoListDetailViewModelDelegate: NSObject {
 protocol TodoListDetailViewModelProtocol {
     var delegate: TodoListDetailViewModelDelegate? { get set }
     func viewDidLoad()
-    func getTodo(todoDetailPresentation : TodoListDetailPresentation)
+    func createNotification(_ todo: TodoItem)
 }

@@ -11,6 +11,7 @@ class TodoListRouter: NSObject, TodoListRouterProtocol {
     
     let interactor: TodoListInteractorProtocol
     private unowned let view: UIViewController
+    
     init(view: UIViewController, interactor: TodoListInteractorProtocol) {
         self.view = view
         self.interactor = interactor
@@ -22,6 +23,5 @@ class TodoListRouter: NSObject, TodoListRouterProtocol {
             let viewController = TodoListDetailBuilder.build(todos)
             self.view.navigationController?.pushViewController(viewController, animated: true)
         }
-        
     }
 }

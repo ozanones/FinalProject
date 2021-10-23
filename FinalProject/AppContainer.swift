@@ -12,4 +12,5 @@ let appContainer = AppContainer()
 class AppContainer {
     let router = AppRouter()
     let service = CoreDataFunctionalService()
+    let notificationService = NotificationManager()
 }
