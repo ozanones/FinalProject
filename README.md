@@ -8,7 +8,7 @@
 ## Second View
 *It was built with MVVM pattern where Todo Details can be shown.*
 *Selected todo item details will be displayed in the second view.*
-*Notification service sends push notification when user determines the after how many hours notification will be sent.
+*Notification service sends push notification when user determines the after how many hours notification will be sent.*
 ```
 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: addHours * 3600, repeats: false)
 ```
